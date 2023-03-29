@@ -1,0 +1,3 @@
+#!/bin/bash
+sudo systemctl stop discordbot.service
+sudo ps aux | grep discord-bot | grep -v grep | awk '{print "kill -9", $2}' | sh
