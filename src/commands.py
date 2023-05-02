@@ -258,9 +258,10 @@ async def shojin(orgmsg: Union[Interaction, Message], user_: str, lower: int, up
     if channel is None or user is None:
         return
 
-    url: str = f"https://script.google.com/macros/s/AKfycbx_twCi0cHMeL4Amq-fWwkaJljIKdowxOAhAOhQgzaSATQDLinis0TZzPqkvMa0lhB7/exec?user={user_}&lower={lower}&upper={upper}"
+    url: str = f"https://script.google.com/macros/s/AKfycby5PvFQAa4W8m812NVFcjx1sQGKPQ2QUnFr1RLtL7I-JczdDrq_5XvnTJoJIGQtbco0/exec?user={user_}&lower={lower}&upper={upper}"
     response = requests.get(url)
     json_ = response.json()
+    print(json_)
 
     if json_["error"]["code"] != 0:
         reply: str = "Error"
